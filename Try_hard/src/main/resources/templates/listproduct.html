@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<head>
+<title>Product List</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+table,tr ,th, td {
+	border: 1px solid white;
+	border-collapse: collapse;
+}
+
+th, td {
+	background-color: #96D4D4;
+}
+</style>
+</head>
+<body>
+	<div></div>
+	<div>
+		<h1>Manage Product</h1>
+		<table>
+			<tr>
+				<th>Product's Code</th>
+				<th>Product's Description</th>
+				<th>Price</th>
+				<th colspan="3">Menu</th>
+			</tr>
+			<tr th:each="user : ${users}">
+				<td th:text="${user.code}"></td>
+				<td th:text="${user.description}"></td>
+				<td th:text="${user.price}"></td>
+				<td><a th:href="@{/edit?id={id}(id=${user.id})}"
+					class="btn btn-primary">Edit</a> <a
+					th:href="@{/delete?id={id}(id=${user.id})}" class="btn btn-danger">Delete</a>
+				</td>
+			</tr>
+		</table>
+		<a href="/insert" class="btn btn-success">Add Product</a>
+	</div>
+</html>

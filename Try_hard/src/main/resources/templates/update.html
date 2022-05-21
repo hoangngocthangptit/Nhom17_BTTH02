@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<head>
+<meta charset="ISO-8859-1">
+<title>edit</title>
+</head>
+<body>
+    <h1>Edit Product</h1>
+    <form th:object="${user}" th:action="@{save}" action="#" method="post">
+        <input type="hidden" th:field="*{id}">
+        <div>
+            <label th:text="Code" th:for="code"></label>
+            <input type="text" th:field="*{code}" class="form-control"/>
+        </div>
+        <div style="clear: both; display: block; height: 10px"></div>
+        <div>
+            <label th:text="Description" th:for="description"></label>
+            <input type="text" th:field="*{description}" class="form-control"/>
+        </div>
+        <div style="clear: both; display: block; height: 10px"></div>
+        <div>
+            <label th:text="Price" th:for="price"></label>
+            <input type="text" th:field="*{price}" class="form-control"/>
+        </div>
+        <div style="clear: both; display: block; height: 10px"></div>
+        <input type="submit" class="btn btn-success" value="Save"/>
+    </form>
+</body>
+</html>

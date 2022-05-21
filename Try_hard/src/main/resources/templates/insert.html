@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+   <h1>New Product</h1>
+    <div class="col-md-auto">
+        <form th:object="${user}" th:action="@{save}" action="#" method="post">
+            <div>
+                <label th:text="Code" th:for="code"></label>
+                <input type="text" th:field="*{code}" class="form-control" placeholder="Code"/>
+            </div>
+            <div style="clear: both; display: block; height: 10px"></div>
+            <div>
+                <label th:text="Description" th:for="description"></label>
+                <input type="text" th:field="*{description}" class="form-control" placeholder="Description"/>
+            </div>
+            <div style="clear: both; display: block; height: 10px"></div>
+          <div>
+                <label th:text="Price" th:for="price"></label>
+                <input type="text" th:field="*{price}" class="form-control" placeholder="price"/>
+            </div> 
+            <div style="clear: both; display: block; height: 10px"></div>
+            <input type="submit" class="btn btn-success" value="Save"/>
+        </form>
+    </div>
+</body>
+</html>
