@@ -46,12 +46,12 @@ public class Controller {
 	@RequestMapping(value = "save", method = RequestMethod.POST)
 	public String save(Product user) {
 		ProductService.save(user);
-		return "redirect:/";
+		return "redirect:/listproduct";
 	}
 
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
 	public String delete(@RequestParam("id") Long userId, Model model) {
 		ProductService.delete(userId);
-		return "redirect:/";
+		return "redirect:/listproduct";
 	}
 }
